@@ -1,0 +1,4 @@
+@import "_mixins/font-face";
+
+@include font-face("OpenSansCondensed-Light", "../fonts/OpenSansCondensed-Light/OpenSansCondensed-Light");
+@include font-face("OpenSansCondensed-Bold", "../fonts/OpenSansCondensed-Bold/OpenSansCondensed-Bold");

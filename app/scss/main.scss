@@ -1,0 +1,146 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+@import "libs";
+
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+	input, textarea {
+		border: #666 1px solid;
+		outline: none;
+		&:focus:required:invalid {
+			border-color: red;
+		}
+		&:required:valid {
+			border-color: green;
+		}
+	}
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+i {
+	line-height: 1;
+}
+
+h1,h2,h3,h4,h5,h6,p,body,ul,li {
+	padding: 0;
+	margin: 0;
+}
+
+
+ul {
+	list-style-type: none;
+}
+
+input, button, textarea, a {
+	&:focus{
+		outline: none;
+	}
+}
+
+.slick-slide {
+	outline: none;
+}
+
+a {
+	cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+.burger {
+	$toggler-part-height: 4px;
+	$toggler-part-bg-color: #fff;
+	display: none;
+	position: relative;
+	z-index: 10;
+	padding: 0;
+	width: 30px;
+	background: transparent;
+	border: none;
+	user-select: none;
+	cursor: pointer;
+	outline: none;
+	align-self: center;
+	margin-left: auto;
+	@media (max-width: 992px) {
+		display: block;
+	}
+	&:focus {
+		outline: 0;
+	}
+	span {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+		height: $toggler-part-height;
+		font-size: 0;
+		color: transparent;
+		background: $toggler-part-bg-color;
+		transition: background .3s;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: $toggler-part-height;
+			background: $toggler-part-bg-color;
+			transform-origin: 50% 50%;
+			transition: top .3s, transform .3s;
+		}
+		&:before {
+			top: -10px;
+		}
+		&:after {
+			top: 10px
+		}
+	}
+	&--close {
+		span {
+			transition: background .3s 0s;
+			background: transparent;
+			&:before,
+			&:after {
+				transition: top .3s, transform .3s;
+				top: 0;
+			}
+			&:before {
+				transform: rotate3d(0, 0, 1, 45deg);
+			}
+			&:after {
+				transform: rotate3d(0, 0, 1, -45deg);
+			}
+		}
+	}
+}
+
+
+h1{
+	font-size: 20px;
+	height: 20px;
+}
+
+
